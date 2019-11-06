@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fuzzy Word Search</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function()
+                  {
+                    $( "#searchfield" ).autocomplete(
+                                                        {
+                                                          source: "/search/",
+                                                          minLength: 1,
+                                                        });
+                  }
+        );
+    </script>
+</head>
+<body>
+<center>
+  <div>
+    <h2>Fuzzy Word Search</h2>
+      <br>
+    <form action= "/getJson">
+        <input style="width:200px;height:35px;" id="searchfield" type="text" name="term" placeholder="Type here..." required>
+        <br>
+        <br>
+        <input style="width:90px;height:35px;" type="submit" value="Get Json">
+    </form>
+</center>
+</body>
+</html>
+<!--
+ What is request.term?
+
+The third variation, the callback, provides the most flexibility,
+and can be used to connect any data source to Autocomplete.
+The callback gets two arguments:
+A request object, with a single property called "term",
+which refers to the value currently in the text input.
+For example, when the user entered "new yo" in a city field,
+the Autocomplete term will equal "new yo".
+-->
