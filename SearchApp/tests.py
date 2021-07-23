@@ -1,5 +1,9 @@
 from django.test import TestCase
-
 # Create your tests here.
-def test_api():
-    assert True == True
+
+
+def get_index():
+    return 'Hello'
+
+def test_get_index():
+    assert get_index() == 'Hello'

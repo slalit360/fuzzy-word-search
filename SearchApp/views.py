@@ -4,6 +4,12 @@ import json
 from .fuzzy import  getMatchingWord
 
 
+def get_index(request):
+    if request.method == 'GET':
+        return JsonResponse({'msg': 'Hello'})
+    else:
+        return JsonResponse({'msg': 'Post request is handled'})
+
 def index_view(request):
     """
     index page view
